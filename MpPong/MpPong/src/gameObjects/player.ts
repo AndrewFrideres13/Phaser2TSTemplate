@@ -1,5 +1,5 @@
-﻿module MpPong.Client {
-
+﻿module PhaserTSTemplate.Client {
+//Player object with example definitions for movement, calling the super class of it, and adding physics
     export class Player extends Phaser.Sprite {
 
         constructor(game: Phaser.Game, x: number, y: number) {
@@ -12,7 +12,9 @@
             this.body.collideWorldBounds = true;
             this.body.setCircle(20);
         }
-
+        //Movement is done and defined in the update, which represents our game loop.
+        //Needs to be here otherwise these actions will NOT work, same with any other
+        //actions involcing physics, or player interaction
         update() {
             this.body.velocity.x = 0;
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {

@@ -1,4 +1,4 @@
-﻿module MpPong.Client {
+﻿module PhaserTSTemplate.Client {
 
     export class Boot extends Phaser.State {
         preload() {
@@ -8,7 +8,7 @@
         create() {
             this.stage.setBackgroundColor(0xFFFFFF);
 
-            this.input.maxPointers = 1;
+            this.input.maxPointers = 1; //Ensures only ONE pointer (mouse, touch, etc.)
             this.stage.disableVisibilityChange = true;
 
             if (this.game.device.desktop) {
@@ -25,7 +25,7 @@
                 this.scale.pageAlignHorizontally = true;
                 this.scale.refresh();
             }
-
+            //After wrapping this all up, move on to the Preloader scene
             this.game.state.start('Preloader', true, false);
         }
     }

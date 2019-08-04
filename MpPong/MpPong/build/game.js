@@ -1,44 +1,51 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var MpPong;
-(function (MpPong) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var PhaserTSTemplate;
+(function (PhaserTSTemplate) {
     var Client;
     (function (Client) {
         var GameEngine = (function (_super) {
             __extends(GameEngine, _super);
             function GameEngine() {
-                _super.call(this, 1024, 800, Phaser.AUTO, 'content', null);
-                this.state.add('Boot', Client.Boot, false);
-                this.state.add('Preloader', Client.Preloader, false);
-                this.state.add('MainMenu', Client.MainMenu, false);
-                this.state.add('Level01', Client.Level01, false);
-                this.state.start('Boot');
+                var _this = _super.call(this, 1024, 800, Phaser.AUTO, 'content', null) || this;
+                _this.state.add('Boot', Client.Boot, false);
+                _this.state.add('Preloader', Client.Preloader, false);
+                _this.state.add('MainMenu', Client.MainMenu, false);
+                _this.state.add('Level01', Client.Level01, false);
+                _this.state.start('Boot');
+                return _this;
             }
             return GameEngine;
         }(Phaser.Game));
         Client.GameEngine = GameEngine;
-    })(Client = MpPong.Client || (MpPong.Client = {}));
-})(MpPong || (MpPong = {}));
+    })(Client = PhaserTSTemplate.Client || (PhaserTSTemplate.Client = {}));
+})(PhaserTSTemplate || (PhaserTSTemplate = {}));
 window.onload = function () {
-    new MpPong.Client.GameEngine();
+    new PhaserTSTemplate.Client.GameEngine();
 };
-var MpPong;
-(function (MpPong) {
+var PhaserTSTemplate;
+(function (PhaserTSTemplate) {
     var Client;
     (function (Client) {
         var Player = (function (_super) {
             __extends(Player, _super);
             function Player(game, x, y) {
-                _super.call(this, game, x, y, 'level01-sprites', 1);
-                this.anchor.setTo(0.5);
-                this.animations.add('fly', [0, 1], 5, true);
-                game.add.existing(this);
-                game.physics.enable(this);
-                this.body.collideWorldBounds = true;
-                this.body.setCircle(20);
+                var _this = _super.call(this, game, x, y, 'level01-sprites', 1) || this;
+                _this.anchor.setTo(0.5);
+                _this.animations.add('fly', [0, 1], 5, true);
+                game.add.existing(_this);
+                game.physics.enable(_this);
+                _this.body.collideWorldBounds = true;
+                _this.body.setCircle(20);
+                return _this;
             }
             Player.prototype.update = function () {
                 this.body.velocity.x = 0;
@@ -63,16 +70,16 @@ var MpPong;
             return Player;
         }(Phaser.Sprite));
         Client.Player = Player;
-    })(Client = MpPong.Client || (MpPong.Client = {}));
-})(MpPong || (MpPong = {}));
-var MpPong;
-(function (MpPong) {
+    })(Client = PhaserTSTemplate.Client || (PhaserTSTemplate.Client = {}));
+})(PhaserTSTemplate || (PhaserTSTemplate = {}));
+var PhaserTSTemplate;
+(function (PhaserTSTemplate) {
     var Client;
     (function (Client) {
         var Boot = (function (_super) {
             __extends(Boot, _super);
             function Boot() {
-                _super.apply(this, arguments);
+                return _super !== null && _super.apply(this, arguments) || this;
             }
             Boot.prototype.preload = function () {
             };
@@ -97,16 +104,16 @@ var MpPong;
             return Boot;
         }(Phaser.State));
         Client.Boot = Boot;
-    })(Client = MpPong.Client || (MpPong.Client = {}));
-})(MpPong || (MpPong = {}));
-var MpPong;
-(function (MpPong) {
+    })(Client = PhaserTSTemplate.Client || (PhaserTSTemplate.Client = {}));
+})(PhaserTSTemplate || (PhaserTSTemplate = {}));
+var PhaserTSTemplate;
+(function (PhaserTSTemplate) {
     var Client;
     (function (Client) {
         var Level01 = (function (_super) {
             __extends(Level01, _super);
             function Level01() {
-                _super.apply(this, arguments);
+                return _super !== null && _super.apply(this, arguments) || this;
             }
             Level01.prototype.create = function () {
                 this.physics.startSystem(Phaser.Physics.ARCADE);
@@ -118,16 +125,16 @@ var MpPong;
             return Level01;
         }(Phaser.State));
         Client.Level01 = Level01;
-    })(Client = MpPong.Client || (MpPong.Client = {}));
-})(MpPong || (MpPong = {}));
-var MpPong;
-(function (MpPong) {
+    })(Client = PhaserTSTemplate.Client || (PhaserTSTemplate.Client = {}));
+})(PhaserTSTemplate || (PhaserTSTemplate = {}));
+var PhaserTSTemplate;
+(function (PhaserTSTemplate) {
     var Client;
     (function (Client) {
         var MainMenu = (function (_super) {
             __extends(MainMenu, _super);
             function MainMenu() {
-                _super.apply(this, arguments);
+                return _super !== null && _super.apply(this, arguments) || this;
             }
             MainMenu.prototype.create = function () {
                 this.background = this.add.sprite(0, 0, 'titlepage');
@@ -151,16 +158,16 @@ var MpPong;
             return MainMenu;
         }(Phaser.State));
         Client.MainMenu = MainMenu;
-    })(Client = MpPong.Client || (MpPong.Client = {}));
-})(MpPong || (MpPong = {}));
-var MpPong;
-(function (MpPong) {
+    })(Client = PhaserTSTemplate.Client || (PhaserTSTemplate.Client = {}));
+})(PhaserTSTemplate || (PhaserTSTemplate = {}));
+var PhaserTSTemplate;
+(function (PhaserTSTemplate) {
     var Client;
     (function (Client) {
         var Preloader = (function (_super) {
             __extends(Preloader, _super);
             function Preloader() {
-                _super.apply(this, arguments);
+                return _super !== null && _super.apply(this, arguments) || this;
             }
             Preloader.prototype.preload = function () {
                 this.loaderText = this.game.add.text(this.world.centerX, 200, "Loading...", { font: "18px Arial", fill: "#A9A91111", align: "center" });
@@ -180,6 +187,6 @@ var MpPong;
             return Preloader;
         }(Phaser.State));
         Client.Preloader = Preloader;
-    })(Client = MpPong.Client || (MpPong.Client = {}));
-})(MpPong || (MpPong = {}));
+    })(Client = PhaserTSTemplate.Client || (PhaserTSTemplate.Client = {}));
+})(PhaserTSTemplate || (PhaserTSTemplate = {}));
 //# sourceMappingURL=game.js.map

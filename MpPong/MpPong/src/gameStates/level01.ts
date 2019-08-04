@@ -1,12 +1,13 @@
-﻿module MpPong.Client {
+﻿module PhaserTSTemplate.Client {
 
     export class Level01 extends Phaser.State {
-
+        //We can create these variables to expose them to this class
         background: Phaser.Sprite;
         music: Phaser.Sound;
         player: Player;
 
-        create() {
+        create() { //Start the physics system since we need it now, add the BG and player sprite,
+        //and create the player (defined in player.ts) and allow for action
             this.physics.startSystem(Phaser.Physics.ARCADE);
 
             this.background = this.add.sprite(0, 0, 'level01-sprites','background');

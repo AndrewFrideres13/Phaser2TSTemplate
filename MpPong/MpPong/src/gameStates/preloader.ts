@@ -1,10 +1,10 @@
-﻿module MpPong.Client {
+﻿module PhaserTSTemplate.Client {
 
     export class Preloader extends Phaser.State {
         loaderText: Phaser.Text;
 
         preload() {
-            
+            //Begin asset loading for THIS sene. Essentially are actual Loading scene
             this.loaderText = this.game.add.text(this.world.centerX, 200, "Loading...",
                 { font: "18px Arial", fill: "#A9A91111", align: "center" });
             this.loaderText.anchor.setTo(0.5);
@@ -22,7 +22,7 @@
             tween.onComplete.add(this.startMainMenu, this);
         }
 
-        startMainMenu() {
+        startMainMenu() { //In a function that we can call upon the tweens completed action (in this case when animation is done)
             this.game.state.start('MainMenu', true, false);
         }
 
